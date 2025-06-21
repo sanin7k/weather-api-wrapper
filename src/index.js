@@ -1,10 +1,8 @@
 require("dotenv").config();
-const Fastify = require("fastify");
+const fastify = require("fastify")({ logger: true });
 const cors = require("@fastify/cors");
 
 const weatherRoutes = require("./routes/weather");
-
-const fastify = Fastify({ logger: true });
 
 fastify.register(cors);
 fastify.register(weatherRoutes);
